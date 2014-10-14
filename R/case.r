@@ -28,6 +28,15 @@ get_alt_case <- function(letter, letters, LETTERS)
 
 caseify <- function(name, type="alternating")
 {
+  type <- match.arg(tolower(type), c("lower", "upper", "unchanged", "random", "alternating"))
+  
+  if (type == "unchanged")
+    return( name )
+  else if (type == "lower")
+    return( tolower(name) )
+  else if (type == "upper")
+    return( toupper(name) )
+  
   # Someone could be a jerk and change letters/LETTERS in the global environment
   # generated via: cat(paste0("c(\"", paste(letters, collapse="\", \""), "\")"))
   letters <- c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
@@ -47,7 +56,7 @@ caseify <- function(name, type="alternating")
         tmp[i] <- get_alt_case(letter=tmp[i], letters=letters, LETTERS=LETTERS)
     }
   }
-  else if (type == "alternate")
+  else if (type == "alternating")
   {
     if (sample(TF, size=1))
       tmp[1L] <- get_alt_case(letter=tmp[1L], letters=letters, LETTERS=LETTERS)

@@ -8,7 +8,7 @@ TODO
 
 ```r
 library(devtools)
-install_github(repo="xkcdpw", username="wrathematics")
+install_github(repo="hackR", username="wrathematics")
 ```
 
 

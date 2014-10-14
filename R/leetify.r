@@ -33,13 +33,6 @@ replaceify <- function(name, leetness=.4, include.unicode=FALSE)
 
 leetify <- function(name, casetype="alternating", leetness=.4, include.unicode=FALSE)
 {
-  type <- match.arg(tolower(casetype), c("lower", "upper", "unchanged", "random", "alternating"))
-  
-  if (type == "lower")
-    name <- tolower(name)
-  else if (type == "upper")
-    name <- toupper(name)
-  
   leetname <- replaceify(name=name, leetness=leetness, include.unicode=include.unicode)
   leetname <- caseify(leetname, type=casetype)
   
