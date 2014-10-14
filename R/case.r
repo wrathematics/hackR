@@ -79,6 +79,13 @@ caseify <- function(name, type="alternating")
         else 
           prev.case <- current.case
       }
+      else if (prev.case == "neither")
+      {
+        if (sample(TF, size=1))
+          tmp[i] <- get_alt_case(letter=tmp[i], letters=letters, LETTERS=LETTERS)
+        
+        prev.case <- get_current_case(letter=tmp[i], letters=letters, LETTERS=LETTERS)
+      }
       else
         prev.case <- current.case
     }
