@@ -3,7 +3,7 @@
 Remember the 90's, when hacker movies roamed the movie theaters, 
 unabated by modern cynicism?
 
-This package lets you rekindle your love of goofy leet hacker names.
+This package lets you rekindle your love of goofy leet hacker handles.
 
 
 
@@ -11,7 +11,7 @@ This package lets you rekindle your love of goofy leet hacker names.
 
 ```r
 library(devtools)
-install_github(repo="hackR", username="wrathematics")
+install_github("wrathematics/hackR")
 ```
 
 
@@ -31,8 +31,9 @@ leetify("wrathematics")
 # "wRa+hE^^A+IcS"
 ```
 
-If you can't think of an awesome hacker name, try the `rleet()` 
-function, which produces a random leet hacker name:
+If you can't think of an awesome hacker handle like "elephantdeath" or
+"koopascorpion", try the `rleet()` function, which produces a random
+leet hacker name:
 
 ```r
 rleet()
@@ -67,5 +68,5 @@ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
 SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
 
