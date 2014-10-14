@@ -26,16 +26,16 @@ get_alt_case <- function(letter, letters, LETTERS)
 
 
 
-caseify <- function(name, type="alternating")
+caseify <- function(handle, case.type="alternating")
 {
-  type <- match.arg(tolower(type), c("lower", "upper", "unchanged", "random", "alternating"))
+  case.type <- match.arg(tolower(case.type), c("lower", "upper", "unchanged", "random", "alternating"))
   
-  if (type == "unchanged")
-    return( name )
-  else if (type == "lower")
-    return( tolower(name) )
-  else if (type == "upper")
-    return( toupper(name) )
+  if (case.type == "unchanged")
+    return( handle )
+  else if (case.type == "lower")
+    return( tolower(handle) )
+  else if (case.type == "upper")
+    return( toupper(handle) )
   
   # Someone could be a jerk and change letters/LETTERS in the global environment
   # generated via: cat(paste0("c(\"", paste(letters, collapse="\", \""), "\")"))
@@ -46,9 +46,9 @@ caseify <- function(name, type="alternating")
 #  prob <- c(leetness, 1-leetness)
   prob <- c(.5, .5)
   
-  tmp <- unlist(strsplit(x=name, split=""))
+  tmp <- unlist(strsplit(x=handle, split=""))
   
-  if (type == "random")
+  if (case.type == "random")
   {
     for (i in 1:length(tmp))
     {
@@ -56,7 +56,7 @@ caseify <- function(name, type="alternating")
         tmp[i] <- get_alt_case(letter=tmp[i], letters=letters, LETTERS=LETTERS)
     }
   }
-  else if (type == "alternating")
+  else if (case.type == "alternating")
   {
     if (sample(TF, size=1))
       tmp[1L] <- get_alt_case(letter=tmp[1L], letters=letters, LETTERS=LETTERS)
@@ -91,7 +91,7 @@ caseify <- function(name, type="alternating")
     }
   }
   
-  leetname <- paste0(tmp, collapse="")
-  return( leetname )
+  leethandle <- paste0(tmp, collapse="")
+  return( leethandle )
 }
 
