@@ -2,7 +2,6 @@
 #' 
 #' Run the hackR webapp.
 #' 
-#' @importFrom shiny runApp
 #' @export
 hack_the_planet <- function()
 {
