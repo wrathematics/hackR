@@ -1,0 +1,8 @@
+Release 2.0-0 (///):
+  * Change to roxygen2 for manual.
+  * Update shiny app.
+
+Release 1.0-0 (10/14/2014):
+  * Add leetify() and leetest().
+  * Add rleet().
+  * Add shiny app.
