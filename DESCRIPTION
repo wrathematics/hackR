@@ -8,6 +8,8 @@ Depends:
     R (>= 3.0.0)
 Imports:
     utils
+Suggests:
+    shiny (>= 0.12.1)
 NeedsCompilation: no
 ByteCompile: yes
 Authors@R: c(person("Drew", "Schmidt", role=c("aut", "cre"),

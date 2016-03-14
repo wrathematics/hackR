@@ -17,13 +17,7 @@ about.thisapp <- HTML("
   people call themselves things like ne0BuRn.  With this app,
   you're one step closer to hacking the gibson.
   </p>
-  
-  
-  <p>
-  Hosting is generously provided by 
-  <a href='https://www.shinyapps.io/'>RStudio</a>.
-  </p>"
-)
+")
 
 
 type_print <- c("lower", "upper", "unchanged", "random", "alternating")
@@ -34,7 +28,7 @@ shinyUI(
     titlePanel("2 l33t 4 u"),
     fluidRow(
     sidebarPanel(
-      tags$textarea(id="inputbox", rows=2, cols=60, "Put the text in here that you want to l33tify."),
+      tags$textarea(id="inputbox", rows=2, cols=40, "Put the text in here that you want to l33tify."),
       br(),
       sliderInput("leetness", "Leetness", 0, 1, 0.4, step=0.05, ticks=TRUE),
       selectizeInput("case.type", "Casing Options", type_print, "alternating"),
@@ -51,4 +45,3 @@ shinyUI(
     )
   ))
 )
-
