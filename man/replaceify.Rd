@@ -18,7 +18,7 @@ often character substitutions (e.g., \code{a} to \code{@}) will take place.}
 \item{include.unicode}{Logical; should unicode substitutions should be allowed?}
 }
 \value{
-The input string with l33t substitutions, 1ik3 t}{i5.
+The input string with l33t substitutions, 1ik3 tHi5.
 }
 \description{
 2l33t4u
@@ -31,6 +31,6 @@ hackR::replaceify("This is what the internet looked like 20 years ago")
 
 }
 \seealso{
-\code{\link{rleet}}
+\code{\link{rleet}, \link{caseify}}
 }
 

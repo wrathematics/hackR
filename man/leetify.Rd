@@ -7,6 +7,9 @@
 \usage{
 leetify(handle, case.type = "alternating", sub.type = "simple",
   leetness = 0.4, include.unicode = FALSE)
+
+leetest(handle, case.type = "alternating", sub.type = "simple",
+  include.unicode = FALSE)
 }
 \arguments{
 \item{handle}{Input string to be l33tified.}
@@ -27,25 +30,22 @@ be allowed.}
 A leet hacker handle, for optimal gibson hacking.
 }
 \description{
-Functions for converting boring handles into \code{133+ }{@cKeR} handles.
-}
-\details{
 There is an element of random chance, so re-running the same code can
 produce different outputs.  This is controlled to some degree by the
 \code{leetness} argument.
 
 \code{leetest()} is just sugar for \code{leetify(leetness=1)}.
 }
-\examples{
-
-\dontrun{
-library(hackR, quietly=TRUE)
-leetify("Hadley Wickham")
-leetest("Hadley Wickham")
+\details{
+Functions for converting boring handles into \code{133+ }{@cKeR} handles.
 }
+\examples{
+library(hackR, quietly=TRUE)
+leetify("This is what the internet looked like 20 years ago")
+leetest("This is what the internet looked like 20 years ago")
 
 }
 \seealso{
-\code{\link{rleet}, \link{modifies}}
+\code{\link{rleet}, \link{caseify}, \link{replaceify}}
 }
 

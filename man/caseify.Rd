@@ -30,6 +30,6 @@ hackR::caseify("This is what the internet looked like 20 years ago")
 
 }
 \seealso{
-\code{\link{rleet}}
+\code{\link{rleet}, \link{replaceify}}
 }
 

@@ -21,7 +21,7 @@
 #' @examples
 #' hackR::caseify("This is what the internet looked like 20 years ago")
 #' 
-#' @seealso \code{\link{rleet}}
+#' @seealso \code{\link{rleet}, \link{replaceify}}
 #' @export
 caseify <- function(handle, case.type="alternating", leetness=.4)
 {

@@ -16,12 +16,12 @@
 #' Logical; should unicode substitutions should be allowed?
 #' 
 #' @return
-#' The input string with l33t substitutions, 1ik3 t}{i5.
+#' The input string with l33t substitutions, 1ik3 tHi5.
 #' 
 #' @examples
 #' hackR::replaceify("This is what the internet looked like 20 years ago")
 #' 
-#' @seealso \code{\link{rleet}}
+#' @seealso \code{\link{rleet}, \link{caseify}}
 #' @export
 replaceify <- function(handle, sub.type="simple", leetness=.4, include.unicode=FALSE)
 {
