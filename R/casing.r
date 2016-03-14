@@ -1,32 +1,29 @@
-get_current_case <- function(letter, letters, LETTERS)
-{
-  match <- which(letter == letters)
-  if (length(match) > 0)
-    return( "lower" )
-  
-  match <- letters[which(letter == LETTERS)]
-  if (length(match) > 0)
-    return( "upper" )
-  
-  return( "neither" )
-}
-
-
-
-get_alt_case <- function(letter, letters, LETTERS)
-{
-  match <- LETTERS[which(letter == letters)]
-  if (length(match) == 0)
-    match <- letters[which(letter == LETTERS)]
-  if (length(match) == 0)
-    match <- letter
-  
-  return( match )
-}
-
-
-
-caseify <- function(handle, case.type="alternating")
+#' caseify
+#' 
+#' Makes the input string have l33t casing.
+#' 
+#' @description
+#' 2l33t4u
+#' 
+#' @param handle 
+#' Input string to be caseified.
+#' @param case.type 
+#' String that determines the kind of casing to give the input
+#' handle.  Choices are "lower", "upper", "unchanged", "random", and
+#' "alternating", and do basically exactly what they sound like.
+#' @param leetness
+#' Heuristic between 0 and 1 (inclusive) that determines how
+#' often character substitutions (e.g., \code{a} to \code{@}) will take place.
+#' 
+#' @return
+#' The input string with l33t casing, LiKe ThIs.
+#' 
+#' @examples
+#' hackR::caseify("This is what the internet looked like 20 years ago")
+#' 
+#' @seealso \code{\link{rleet}}
+#' @export
+caseify <- function(handle, case.type="alternating", leetness=.4)
 {
   case.type <- match.arg(tolower(case.type), c("lower", "upper", "unchanged", "random", "alternating"))
   
@@ -43,8 +40,8 @@ caseify <- function(handle, case.type="alternating")
   LETTERS <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
   
   TF <- c(TRUE, FALSE)
-#  prob <- c(leetness, 1-leetness)
-  prob <- c(.5, .5)
+  prob <- c(leetness, 1-leetness)
+  # prob <- c(.5, .5)
   
   tmp <- unlist(strsplit(x=handle, split=""))
   
@@ -95,3 +92,30 @@ caseify <- function(handle, case.type="alternating")
   return( leethandle )
 }
 
+
+
+get_current_case <- function(letter, letters, LETTERS)
+{
+  match <- which(letter == letters)
+  if (length(match) > 0)
+    return( "lower" )
+  
+  match <- letters[which(letter == LETTERS)]
+  if (length(match) > 0)
+    return( "upper" )
+  
+  return( "neither" )
+}
+
+
+
+get_alt_case <- function(letter, letters, LETTERS)
+{
+  match <- LETTERS[which(letter == letters)]
+  if (length(match) == 0)
+    match <- letters[which(letter == LETTERS)]
+  if (length(match) == 0)
+    match <- letter
+  
+  return( match )
+}

@@ -1,4 +1,28 @@
-# 2l33t4u
+#' replaceify
+#' 
+#' Makes the input string use l33t character substitutions.
+#' 
+#' @description
+#' 2l33t4u
+#' 
+#' @param handle 
+#' Input string to be l33tified.
+#' @param sub.type 
+#' String that determines the kind of character substitutions
+#' @param leetness
+#' Heuristic between 0 and 1 (inclusive) that determines how
+#' often character substitutions (e.g., \code{a} to \code{@}) will take place.
+#' @param include.unicode
+#' Logical; should unicode substitutions should be allowed?
+#' 
+#' @return
+#' The input string with l33t substitutions, 1ik3 t}{i5.
+#' 
+#' @examples
+#' hackR::replaceify("This is what the internet looked like 20 years ago")
+#' 
+#' @seealso \code{\link{rleet}}
+#' @export
 replaceify <- function(handle, sub.type="simple", leetness=.4, include.unicode=FALSE)
 {
   sub.type <- match.arg(tolower(sub.type), c("simple", "complex"))
